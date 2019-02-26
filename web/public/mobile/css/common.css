@@ -4,223 +4,222 @@
 ** | 通用样式表
 ** +--------------------------------------------------------------------*/
 body {
-	color: #333;
-	font-size: 13px;
-	font-family: "微软雅黑";
-	line-height: 180%;
-	background: #FFF;
+    color: #333;
+    font-size: 13px;
+    font-family: "微软雅黑";
+    line-height: 180%;
+    background: #FFF;
 }
 .wrap {
-	width: 1030px;
-	margin: 0 auto;
+    margin: 0 auto;
 }
 * {
-	margin: 0px;
-	padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 a {
-	text-decoration: none;
-	blr: expression_r(this.onFocus=this.blur())
+    text-decoration: none;
+    blr: expression_r(this.onFocus=this.blur())
 }
 a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 table {
-	border-collapse: collapse;
+    border-collapse: collapse;
 }
 img {
-	border: 0;
+    border: 0;
 }
 area {
-	blr: expression_r(this.onFocus=this.blur())
+    blr: expression_r(this.onFocus=this.blur())
 }
 .fs14 {
-	font-size: 14px;
+    font-size: 14px;
 }
 .w50 {
-	width: 50px;
+    width: 50px;
 }
 .w120 {
-	width: 120px;
+    width: 120px;
 }
 .w150 {
-	width: 150px;
+    width: 150px;
 }
 .w230 {
-	width: 230px;
+    width: 230px;
 }
 .w250 {
-	width: 250px;
+    width: 250px;
 }
 .w300 {
-	width: 300px;
+    width: 300px;
 }
 .mt10 {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 .mb10 {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .ml10 {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 .mr10 {
-	margin-right: 10px;
+    margin-right: 10px;
 }
 .mt20 {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 .mb20 {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .ml20 {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 .mr20 {
-	margin-right: 20px;
+    margin-right: 20px;
 }
 .mt30 {
-	margin-top: 30px;
+    margin-top: 30px;
 }
 .mb30 {
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 .ml30 {
-	margin-left: 30px;
+    margin-left: 30px;
 }
 .mr30 {
-	margin-right: 30px;
+    margin-right: 30px;
 }
 .mt50 {
-	margin-top: 50px;
+    margin-top: 50px;
 }
 .mb50 {
-	margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 .ml50 {
-	margin-left: 50px;
+    margin-left: 50px;
 }
 .mr50 {
-	margin-right: 50px;
+    margin-right: 50px;
 }
 .pt10 {
-	padding-top: 10px;
+    padding-top: 10px;
 }
 .pb10 {
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 .pl10 {
-	padding-left: 10px;
+    padding-left: 10px;
 }
 .pr10 {
-	padding-right: 10px;
+    padding-right: 10px;
 }
 .pt20 {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 .pb20 {
-	padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 .pl20 {
-	padding-left: 20px;
+    padding-left: 20px;
 }
 .pr20 {
-	padding-right: 20px;
+    padding-right: 20px;
 }
 .pt30 {
-	padding-top: 30px;
+    padding-top: 30px;
 }
 .pb30 {
-	padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 .pl30 {
-	padding-left: 30px;
+    padding-left: 30px;
 }
 .pr30 {
-	padding-right: 30px;
+    padding-right: 30px;
 }
 .clr {
-	clear: both;
+    clear: both;
 }
 .fl {
-	float: left;
+    float: left;
 }
 .fr {
-	float: right;
+    float: right;
 }
 .tc {
-	text-align: center;
+    text-align: center;
 }
 .tl {
-	text-align: left;
+    text-align: left;
 }
 .tr {
-	text-align: right;
+    text-align: right;
 }
 .red {
-	color: #ce0000;
+    color: #ce0000;
 }
 .white {
-	color: #FFF;
+    color: #FFF;
 }
 .black {
-	color: #000;
+    color: #000;
 }
 .gray {
-	color: #CCC;
+    color: #CCC;
 }
 .orange {
-	color: #F60;
+    color: #F60;
 }
 .green {
-	color: #008000;
+    color: #008000;
 }
 .blue {
-	color: #06F;
+    color: #06F;
 }
 .bred {
-	background: #ce0000;
+    background: #ce0000;
 }
 .bwhite {
-	background: #FFF;
+    background: #FFF;
 }
 .bblack {
-	background: #000;
+    background: #000;
 }
 .bgray {
-	background: #CCC;
+    background: #CCC;
 }
 .borange {
-	background: #F60;
+    background: #F60;
 }
 .bgreen {
-	background: #008000;
+    background: #008000;
 }
 .bblue {
-	background: #06F;
+    background: #06F;
 }
 .page {
-	margin-top: 30px;
-	text-align: center;
+    margin-top: 30px;
+    text-align: center;
 }
 .page a, .page span.pagecur {
-	color: #ff3060;
-	background: #FFF;
-	margin: 0px 2px;
-	padding: 8px 12px;
-	border: 1px solid #ff3060;
+    color: #ff3060;
+    background: #FFF;
+    margin: 0px 2px;
+    padding: 8px 12px;
+    border: 1px solid #ff3060;
 }
 .page span {
-	color: #c2c2c2;
-	background: #FFF;
-	margin: 0px 2px;
-	padding: 8px 12px;
-	border: 1px solid #ff3060;
+    color: #c2c2c2;
+    background: #FFF;
+    margin: 0px 2px;
+    padding: 8px 12px;
+    border: 1px solid #ff3060;
 }
 .page a:hover, .page span.current {
-	color: #FFF;
-	background: #ff3060;
-	margin: 0px 2px;
-	padding: 8px 12px;
-	border: 1px solid #ff3060;
+    color: #FFF;
+    background: #ff3060;
+    margin: 0px 2px;
+    padding: 8px 12px;
+    border: 1px solid #ff3060;
 }
