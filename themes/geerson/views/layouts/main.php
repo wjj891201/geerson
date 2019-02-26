@@ -22,7 +22,7 @@ GsAsset::register($this);
         <div class="header">
             <div class="nav fl">
                 <ul>
-                    <?php if ($this->params['topid'] == 110 || $_GET['tid'] == 110): ?>
+                    <?php if ($this->context->id == 'article' && ($this->params['topid'] == 110 || $_GET['tid'] == 110)): ?>
                         <?php $tid_arr = Type::find()->select('tid')->where(['upid' => 110])->asArray()->column(); ?>
                         <?php $works = Type::find()->select(['tid', 'typename', 'typename_en'])->where(['tid' => $tid_arr])->asArray()->orderBy(['pid' => SORT_ASC])->all(); ?>
                         <?php foreach ($works as $key => $vo): ?>

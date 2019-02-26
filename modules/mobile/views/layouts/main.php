@@ -28,9 +28,17 @@ MbAsset::register($this);
                 </div>
             </div>
             <div class="mobile-inner-nav">
-                <?php foreach ((array) $this->params['menu'] as $key => $vo): ?>
-                    <a href="<?= Type::getMobileUrl($vo['tid']); ?>" style="animation-delay: 0s;"><?= $vo['typename_en'] ?></a>
-                <?php endforeach; ?>
+                <?php if ($this->params['topid'] == 110): ?>
+                    <?php $tid_arr = Type::find()->select('tid')->where(['upid' => 110])->asArray()->column(); ?>
+                    <?php $works = Type::find()->select(['tid', 'typename', 'typename_en'])->where(['tid' => $tid_arr])->asArray()->orderBy(['pid' => SORT_ASC])->all(); ?>
+                    <?php foreach ($works as $key => $vo): ?>
+                        <a href="<?= Type::getMobileUrl($vo['tid']); ?>" style="animation-delay: 0s;"><?= $vo['typename_en'] ?></a>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <?php foreach ((array) $this->params['menu'] as $key => $vo): ?>
+                        <a href="<?= Type::getMobileUrl($vo['tid']); ?>" style="animation-delay: 0s;"><?= $vo['typename_en'] ?></a>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
             <div class="logo">
                 <a href="/index.html">

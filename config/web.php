@@ -19,7 +19,7 @@ $config = [
             'showScriptName' => false, //隐藏index.php 
             'suffix' => '',
             'rules' => [
-                'http://admin.geerson.app' => 'admin',
+                'http://admin.geerson.deve' => 'admin',
             ],
         ],
         'cache' => [

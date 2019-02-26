@@ -7,6 +7,7 @@ use yii\web\Controller;
 use yii\helpers\ArrayHelper;
 use app\models\Config;
 use app\models\Type;
+use app\models\News;
 
 class CommonController extends Controller
 {
@@ -22,6 +23,14 @@ class CommonController extends Controller
         $tid = !empty($tid) ? $tid : '';
         $menu = Type::getMenu(['lng' => 'cn', 'upid' => 0], $tid);
         $this->view->params['menu'] = $menu;
+        if (empty($tid))
+        {
+            //特殊导航
+            $did = Yii::$app->request->get('did', '');
+            $tid = News::find()->select('tid')->where(['did' => $did])->scalar();
+        }
+        $topid = Type::find()->select('topid')->where(['tid' => $tid])->scalar();
+        $this->view->params['topid'] = $topid;
     }
 
 }
