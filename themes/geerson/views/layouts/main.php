@@ -22,9 +22,17 @@ GsAsset::register($this);
         <div class="header">
             <div class="nav fl">
                 <ul>
-                    <?php foreach ((array) $this->params['menu'] as $key => $vo): ?>
-                        <li><a data-text='<?= $vo['typename'] ?>' href="<?= Type::getUrl($vo['tid']); ?>"><?= $vo['typename_en'] ?></a></li>
-                    <?php endforeach; ?>
+                    <?php if ($this->params['topid'] == 110 || $_GET['tid'] == 110): ?>
+                        <?php $tid_arr = Type::find()->select('tid')->where(['upid' => 110])->asArray()->column(); ?>
+                        <?php $works = Type::find()->select(['tid', 'typename', 'typename_en'])->where(['tid' => $tid_arr])->asArray()->orderBy(['pid' => SORT_ASC])->all(); ?>
+                        <?php foreach ($works as $key => $vo): ?>
+                            <li><a data-text='<?= $vo['typename'] ?>' href="<?= Type::getUrl($vo['tid']); ?>"><?= $vo['typename_en'] ?></a></li>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <?php foreach ((array) $this->params['menu'] as $key => $vo): ?>
+                            <li><a data-text='<?= $vo['typename'] ?>' href="<?= Type::getUrl($vo['tid']); ?>"><?= $vo['typename_en'] ?></a></li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </ul>
             </div>
             <div class="logo fr">

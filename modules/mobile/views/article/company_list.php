@@ -25,5 +25,7 @@ $this->registerMetaTag(['name' => 'description', 'content' => $info['description
         <img src="<?= $vo['pic'] ?>">
     </div>
 <?php endforeach; ?>
+<?php $filename = Advert::get_one(['atid' => 14]) ?>
+<img src="<?= $filename ?>" width="100%" alt="">
 
 
