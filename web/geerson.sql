@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : local
+Source Server         : localhost
 Source Server Version : 50553
 Source Host           : localhost:3306
-Source Database       : cms
+Source Database       : geerson
 
 Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-01-14 20:42:28
+Date: 2019-02-26 10:38:19
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `mh_access`
+-- Table structure for mh_access
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_access`;
 CREATE TABLE `mh_access` (
@@ -99,7 +99,7 @@ INSERT INTO `mh_access` VALUES ('72', '63', '留言列表', '[\"admin\\/formgrou
 INSERT INTO `mh_access` VALUES ('73', '63', '留言查看', '[\"admin\\/formgroup\\/check\"]', '1', '0000-00-00 00:00:00', '2017-09-21 14:14:46', '100');
 
 -- ----------------------------
--- Table structure for `mh_advert`
+-- Table structure for mh_advert
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_advert`;
 CREATE TABLE `mh_advert` (
@@ -121,17 +121,18 @@ CREATE TABLE `mh_advert` (
   `islink` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `gotoid` int(11) unsigned NOT NULL DEFAULT '0',
   UNIQUE KEY `adid` (`adid`)
-) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=59 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mh_advert
 -- ----------------------------
-INSERT INTO `mh_advert` VALUES ('55', '50', '1', 'cn', 'banner_01', '/upfile/image/20180113/20180113090219_52324.jpg', 'http://www.baidu.com', '', '1', '0', '0', '0', '0', '1515834142', '1', '1', '0');
-INSERT INTO `mh_advert` VALUES ('56', '50', '1', 'cn', 'banner_02', '/upfile/image/20180113/20180113090252_37759.jpg', 'http://www.baidu.com', '', '1', '0', '0', '0', '0', '1515834187', '1', '1', '0');
-INSERT INTO `mh_advert` VALUES ('57', '50', '1', 'cn', 'banner_03', '/upfile/image/20180113/20180113090335_87420.jpg', 'http://www.baidu.com', '', '1', '0', '0', '0', '0', '1515834218', '1', '1', '0');
+INSERT INTO `mh_advert` VALUES ('55', '50', '1', 'cn', 'banner_01', '/upfile/image/20190225/20190225170521_86420.jpg', 'http://www.baidu.com', '', '1', '0', '0', '0', '0', '1551085523', '1', '1', '0');
+INSERT INTO `mh_advert` VALUES ('56', '50', '1', 'cn', 'banner_02', '/upfile/image/20190225/20190225170534_35905.jpg', 'http://www.baidu.com', '', '1', '0', '0', '0', '0', '1551085535', '1', '1', '0');
+INSERT INTO `mh_advert` VALUES ('57', '50', '1', 'cn', 'banner_03', '/upfile/image/20190225/20190225170542_80260.jpg', 'http://www.baidu.com', '', '1', '0', '0', '0', '0', '1551085543', '1', '1', '0');
+INSERT INTO `mh_advert` VALUES ('58', '50', '14', 'cn', '格尚底部广告', '/upfile/image/20190226/20190226095133_63703.jpg', 'http://www.baidu.com', '', '1', '0', '0', '0', '0', '1551145896', '1', '1', '0');
 
 -- ----------------------------
--- Table structure for `mh_advert_type`
+-- Table structure for mh_advert_type
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_advert_type`;
 CREATE TABLE `mh_advert_type` (
@@ -148,15 +149,16 @@ CREATE TABLE `mh_advert_type` (
   `xmlfile` varchar(200) NOT NULL,
   `xmlpath` varchar(200) NOT NULL,
   UNIQUE KEY `adid` (`atid`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mh_advert_type
 -- ----------------------------
-INSERT INTO `mh_advert_type` VALUES ('1', 'cn', '首页幻灯片广告', '', '1920', '800', '1', '0', '0', '', '', '');
+INSERT INTO `mh_advert_type` VALUES ('1', 'cn', '首页幻灯片广告', '', '1920', '1100', '1', '0', '0', '', '', '');
+INSERT INTO `mh_advert_type` VALUES ('14', 'cn', '格尚底部广告', '', '0', '0', '1', '0', '0', '', '', '');
 
 -- ----------------------------
--- Table structure for `mh_app_access_log`
+-- Table structure for mh_app_access_log
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_app_access_log`;
 CREATE TABLE `mh_app_access_log` (
@@ -177,7 +179,7 @@ CREATE TABLE `mh_app_access_log` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `mh_config`
+-- Table structure for mh_config
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_config`;
 CREATE TABLE `mh_config` (
@@ -192,15 +194,15 @@ CREATE TABLE `mh_config` (
 -- ----------------------------
 -- Records of mh_config
 -- ----------------------------
-INSERT INTO `mh_config` VALUES ('7', 'cn', 'sitename', '京建', '0');
-INSERT INTO `mh_config` VALUES ('8', 'cn', 'keyword', '京建', '0');
-INSERT INTO `mh_config` VALUES ('9', 'cn', 'description', '京建', '0');
+INSERT INTO `mh_config` VALUES ('7', 'cn', 'sitename', '格尚', '0');
+INSERT INTO `mh_config` VALUES ('8', 'cn', 'keyword', '格尚', '0');
+INSERT INTO `mh_config` VALUES ('9', 'cn', 'description', '格尚', '0');
 INSERT INTO `mh_config` VALUES ('10', 'cn', 'icpbeian', 'xxxxxx', '0');
 INSERT INTO `mh_config` VALUES ('11', 'cn', 'logo', '/upfile/image/20180113/20180113083614_59290.png', '0');
 INSERT INTO `mh_config` VALUES ('12', 'cn', 'site_closed', '1', '0');
 
 -- ----------------------------
--- Table structure for `mh_form_attr`
+-- Table structure for mh_form_attr
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_form_attr`;
 CREATE TABLE `mh_form_attr` (
@@ -231,7 +233,7 @@ INSERT INTO `mh_form_attr` VALUES ('22', '7', '3', '邮箱', '', 'lemail', 'stri
 INSERT INTO `mh_form_attr` VALUES ('23', '7', '4', '加盟意向', '', 'ljoin', 'string', '', '', '20', '5', '250', '1', '1', '0');
 
 -- ----------------------------
--- Table structure for `mh_form_group`
+-- Table structure for mh_form_group
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_form_group`;
 CREATE TABLE `mh_form_group` (
@@ -264,7 +266,7 @@ CREATE TABLE `mh_form_group` (
 INSERT INTO `mh_form_group` VALUES ('7', '50', 'cn', '在线留言', '', '', '', 'message', '', '0', '1', '0', '1', '0', '', '', '300', '0', '0', '');
 
 -- ----------------------------
--- Table structure for `mh_form_value`
+-- Table structure for mh_form_value
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_form_value`;
 CREATE TABLE `mh_form_value` (
@@ -296,7 +298,7 @@ INSERT INTO `mh_form_value` VALUES ('18', '7', '0', '0', '1515831554', '0', '', 
 INSERT INTO `mh_form_value` VALUES ('19', '7', '0', '0', '1515835529', '0', '', '0', '', '', '', '', '', '');
 
 -- ----------------------------
--- Table structure for `mh_lng`
+-- Table structure for mh_lng
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_lng`;
 CREATE TABLE `mh_lng` (
@@ -325,7 +327,7 @@ INSERT INTO `mh_lng` VALUES ('1', '1', 'cn', '简体中文版', '', '1', '0', '1
 INSERT INTO `mh_lng` VALUES ('2', '50', 'en', 'English', '', '1', '0', '0', '0', '0', '', '', '', '', '');
 
 -- ----------------------------
--- Table structure for `mh_member`
+-- Table structure for mh_member
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_member`;
 CREATE TABLE `mh_member` (
@@ -369,7 +371,7 @@ INSERT INTO `mh_member` VALUES ('2', '15195861092', 'e10adc3949ba59abbe56e057f20
 INSERT INTO `mh_member` VALUES ('3', '18752069887', 'e10adc3949ba59abbe56e057f20f883e', '873525227@qq.com', '', '', '0', '0', '0', '0', '0', '0', '', '', '0', '', '0', '0', '', '0', '0', '0', '1508224759', '0', '1', '1', '0', '', '0');
 
 -- ----------------------------
--- Table structure for `mh_model`
+-- Table structure for mh_model
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_model`;
 CREATE TABLE `mh_model` (
@@ -406,7 +408,7 @@ INSERT INTO `mh_model` VALUES ('18', 'cn', '案例', '20', 'SN{datetime}{s}', '1
 INSERT INTO `mh_model` VALUES ('19', 'cn', '视频', '20', 'SN{datetime}{s}', '1', '1', '0', '0', '1', '0', '1', '1', '1', '1', '1', '1', '1', '0', '0');
 
 -- ----------------------------
--- Table structure for `mh_model_att`
+-- Table structure for mh_model_att
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_model_att`;
 CREATE TABLE `mh_model_att` (
@@ -469,7 +471,7 @@ INSERT INTO `mh_model_att` VALUES ('50', '9', '18', '项目咨询', '', 'consult
 INSERT INTO `mh_model_att` VALUES ('51', '50', '18', '副标题', '副标题长度不能大于200个任意字符', 'longtitle', 'string', '', '80', '5', '250', '0', '', '0', '0', '1', '1', '2');
 
 -- ----------------------------
--- Table structure for `mh_news`
+-- Table structure for mh_news
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_news`;
 CREATE TABLE `mh_news` (
@@ -516,36 +518,16 @@ CREATE TABLE `mh_news` (
   `filepath` varchar(200) NOT NULL,
   `filepage` smallint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`did`)
-) ENGINE=MyISAM AUTO_INCREMENT=159 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=161 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mh_news
 -- ----------------------------
-INSERT INTO `mh_news` VALUES ('152', 'cn', '50', '8', '1', '101', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '墙板类', '墙板类', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515810732', '1515810737', 'join_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('153', 'cn', '50', '8', '1', '102', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '家居类', '家居类', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515810707', '1515810712', 'join_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('154', 'cn', '50', '8', '1', '103', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '完善的品牌系统', '完善的品牌系统', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515810678', '1515810681', 'join_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('155', 'cn', '50', '8', '1', '104', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '领先的店铺经营', '领先的店铺经营', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515810623', '1515810628', 'join_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('156', 'cn', '50', '8', '1', '105', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '全新的ERP订货系统', '全新的ERP订货系统', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515810600', '1515810604', 'join_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('157', 'cn', '50', '8', '1', '106', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '经营理念', '经营理念', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515810578', '1515810583', 'join_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('158', 'cn', '50', '8', '1', '107', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '留言栏', '留言栏', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515811917', '1515811917', 'message_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('131', 'cn', '50', '8', '1', '82', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '企业文化', '企业文化', '', '', '', '/upfile/image/20180109/20180109122217_99604.jpg', '', '', '', '', '', '', '0.00', '0.00', '0', '1515500629', '1515500876', 'about_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('132', 'cn', '50', '8', '1', '84', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '使命', '使命', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515596719', '1515596771', 'group_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('133', 'cn', '50', '8', '1', '85', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '价值观', '价值观', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515596775', '1515596871', 'group_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('134', 'cn', '50', '8', '1', '86', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '企业精神', '企业精神', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515596887', '1515596941', 'group_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('135', 'cn', '50', '8', '1', '87', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '经营理念', '经营理念', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515596980', '1515597051', 'group_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('136', 'cn', '50', '8', '1', '88', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '产业思维', '产业思维', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515597073', '1515597124', 'group_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('137', 'cn', '50', '8', '1', '89', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '发展战略', '发展战略', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515597151', '1515597179', 'group_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('138', 'cn', '50', '8', '1', '90', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '京建模式', '京建模式', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515759230', '1515759284', 'mode_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('139', 'cn', '50', '8', '1', '91', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '全屋整装', '全屋整装', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515502611', '1515502611', 'mode_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('140', 'cn', '50', '8', '1', '92', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '智能家居', '智能家居', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515760249', '1515760255', 'mode_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('141', 'cn', '50', '8', '1', '93', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '装配平台', '装配平台', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515760230', '1515760237', 'mode_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('142', 'cn', '50', '8', '1', '95', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '政策红利及刚需分析', '政策红利及刚需分析', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515760954', '1515760959', 'plan_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('143', 'cn', '50', '8', '1', '96', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '行业趋势', '行业趋势', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515760992', '1515760998', 'plan_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('144', 'cn', '50', '8', '1', '97', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '行业革命', '行业革命', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515761068', '1515761078', 'plan_read', '', '', '0');
-INSERT INTO `mh_news` VALUES ('145', 'cn', '50', '8', '1', '99', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '1', '', '', '人才招聘', '人才招聘', '', '', '', '', '', '', '', '', '', '', '0.00', '0.00', '0', '1515828193', '1515828333', 'recruit_read', '', '', '0');
+INSERT INTO `mh_news` VALUES ('159', 'cn', '50', '1', '1', '108', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '0', '', '', '品牌創建', '', '', '', '', '/upfile/image/20190226/20190226094020_13240.jpg', '', '', '', '', '', '', '0.00', '0.00', '0', '1551145037', '1551145223', 'company_read', '', '', '0');
+INSERT INTO `mh_news` VALUES ('160', 'cn', '50', '1', '1', '108', '', '0', '0', '', '1', '0', '1', '1', '0', '0', '0', '0', '0', '', '', '品牌管理', '', '', '', '', '/upfile/image/20190226/20190226094133_12774.jpg', '', '', '', '', '', '', '0.00', '0.00', '0', '1551145240', '1551145304', 'company_read', '', '', '0');
 
 -- ----------------------------
--- Table structure for `mh_news_album`
+-- Table structure for mh_news_album
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_news_album`;
 CREATE TABLE `mh_news_album` (
@@ -563,7 +545,7 @@ CREATE TABLE `mh_news_album` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `mh_news_attr`
+-- Table structure for mh_news_attr
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_news_attr`;
 CREATE TABLE `mh_news_attr` (
@@ -582,7 +564,7 @@ CREATE TABLE `mh_news_attr` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `mh_news_content`
+-- Table structure for mh_news_content
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_news_content`;
 CREATE TABLE `mh_news_content` (
@@ -590,34 +572,16 @@ CREATE TABLE `mh_news_content` (
   `did` int(11) NOT NULL COMMENT '文章id',
   `content` text NOT NULL,
   PRIMARY KEY (`dcid`)
-) ENGINE=MyISAM AUTO_INCREMENT=138 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=140 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mh_news_content
 -- ----------------------------
-INSERT INTO `mh_news_content` VALUES ('112', '131', '京建集团*携全屋整装+智能家居两大时代朝阳产业，强势布局全国市场，设立江苏南京*湖北武汉*广东佛山三地一体产业基地，完成生产场地 10 万平方米八类集成装饰产品自动化生产线 300 余条，硬性投资 2.18 亿元，实现产能 5000 万方，自建各类功能性产品应用体验展厅 30000 平方，聚合三十多类一线大牌整装*智能系列产品，以“全屋整装”的完整产业链，以“共创共享”的现代商业模式，全面掀起“大众创新、万众创业”的时代商潮。在产品不断创新的同时，   导入“智能家居”的实用主义体验，让家居整装产业不断升级，提升人文居住环境，树立百年企业大计，让京建企业集团始终立于时代企业前端。');
-INSERT INTO `mh_news_content` VALUES ('113', '132', '<p>\n	企业使命是企业长期战略的追求，集中反映了企业的任务和目标，向社会表达了企业的经营目的和行为准则。\n</p>\n<p>\n	京建的使命：以产品和服务为载体，为客户创造价值，为企业创造效益，为社会创造财富。\n</p>');
-INSERT INTO `mh_news_content` VALUES ('114', '133', '<p>\n	企业价值观是企业所倡导的产业信念和基本原则。\n</p>\n<p>\n	京建的价值观：公平、光明、包容、共赢。\n</p>\n<p>\n	京建的人才观：不求人才为我所有，但求人才为我所用\n用人要疑，疑人要用，通过机制监督与控制，让优秀的人更加优秀，让疑惑的人找不到犯疑的机会。\n</p>');
-INSERT INTO `mh_news_content` VALUES ('115', '134', '<p>\n	企业精神是企业管理体系的重要组成内容，是激励人心的核心要素。\n</p>\n<p>\n	京建的企业精神：坚守初心，砥砺前行，追求卓越，永无止境。\n</p>\n<p>\n	京建的企业态度：向生而生，做时代企业，就是不断适应时代要求，在应对各种变化中不断突破时代带来的挑战。\n</p>');
-INSERT INTO `mh_news_content` VALUES ('116', '136', '<p>\n	产品思维：设计、原创、品质、性能、实用、路径、价格、价值。\n</p>\n<p>\n	团队思维：文化、品德、形态、目标、责任、追求、自信、自律。\n</p>\n<p>\n	客户思维：需求至上、有求必应、价值善始、共赢善终。\n</p>');
-INSERT INTO `mh_news_content` VALUES ('117', '137', '京建集团*携全屋整装+智能家居两大时代朝阳产业，强势布局全国市场，设立江苏南京*湖北武汉*广东佛山三地一体产业基地，完成生产场地10万平方米八类集成装饰产品自动化生产线300余条，硬性投资2.18亿元，实现产能5000万方，自建各类功能性产品应用体验展厅30000平方，聚合三十多类一线大牌整装*智能系列产品，以“全屋整装”的完整产业链，以“共创共享”的现代商业模式，全面掀起“大众创业、万众创新”的时代商潮。在产品不断创新的同时，导入“智能家居”的实用主义体验，让家居整装产业不断升级，提升人文居住环境，树立百年企业大计，让京建企业集团始终立于时代企业前端。');
-INSERT INTO `mh_news_content` VALUES ('119', '138', '随着集成墙板行业的快速发展，如何进一步提升品牌竞争力，改善业务环境，寻找全屋整装的闪光点变成面前一项重大问题！人工智能的发展必然带动智能家居行业的迅速提升。在诱人的发展前景和良好的政策环境下，中国智能家居行业显然起步较晚，但巨大的市场需求，使其必然成为中国潜力最大、增长最快的产业之一。智能家居由其便捷、舒适的特性与集成墙板便捷、环保的特点相符，有利于在业务推广过程中吸引更多的女性群体，从而生成集成墙板（外）+智能家居（内）的夫妻共同经营的全新事业，<br />\n京建维兴系列产品，是一种以环保、科技、健康为主题的多功能整体家装产品，不断在取材方面更为健康环保，在加工工艺方面进行了全面升级，扩大了产品的适应范围，更是在火爆的个性定制功能加入智能家居功能方面导入了新元素，依托集成墙板合理的空间布置利用综合布线技术、网络通信技术、安全防范技术、自动控制技术、音频技术将家居生活有关的设施集成，构建高效的住宅设施与家庭日程事物的管理系统，提升家居的安全性、便捷性、舒适性、艺术性，并实现环保节能的居住环境。');
-INSERT INTO `mh_news_content` VALUES ('118', '135', '<p>\n	关注客户，诚信和谐。\n</p>\n<p>\n	客户价值是品牌的核心价值。关注客户需求，满足客户愿望，不断提升产品和服务所带给客户的实际利益。\n</p>\n<p>\n	诚信是社会文明的优良传统，讲信誉，树正风，和谐与共也是京建倡导的基本准则。\n</p>');
-INSERT INTO `mh_news_content` VALUES ('120', '140', '<div align=\"center\">\n	<img src=\"/upfile/image/20180112/20180112122717_20802.png\" alt=\"\" />\n</div>');
-INSERT INTO `mh_news_content` VALUES ('121', '141', '<div align=\"center\">\n	<img src=\"/upfile/image/20180112/20180112122858_21826.png\" alt=\"\" />\n</div>');
-INSERT INTO `mh_news_content` VALUES ('122', '142', '国务院《关于大力发展装配式建筑的指导意见》和住房城乡建设部《“十三五”装配式建筑行动方案》提出了发展装配式建筑及其相关的要求，描绘了发展的前景。按照国家政策号召，即便未来十年我国的建筑业产值没有任何增长，保持在2016年的19万亿元，装配式建筑也有将近6万亿元的市场产值。<br />\n国家出台“十二五”规划等文件明确提出大力发物联网等科技产业，项目所在地广东省还出台了多种扶持政策，并明确地对物联网产业进行资金扶持；出台了对高科技开发型企业进行一系列的优惠政策，在高层次人才引进方面给予资助和支持。');
-INSERT INTO `mh_news_content` VALUES ('123', '143', '随着全屋整装的快速发展带动智慧家居的发展是必然趋势，随着人们对居住环境要求的不断提高，越来越多的家居开始引进智能化系统和设备。智能化系统涵盖的内容也从单纯的方式向多种方式相结合的方向发展。');
-INSERT INTO `mh_news_content` VALUES ('124', '144', '在我国智能物联网行业才刚刚起步，经历了近10年的探索阶段之后，现如今智能化住宅面积已达到400亿平方米，预计到2020年还将新增300亿平方米，全国智能化住宅小区的建设数量在今后10年能达到上万个。全国掀起了智能家居的建设高潮，仅在广东省就计划未来5年将建设300万平方米的智能建筑，全省每个地级市选择3-5处建筑面积在5万平方米以上的住宅小区或2万平方米以上的公共建筑，采用传感网、智能控制、RFID等技术应用于智能建筑当中。');
-INSERT INTO `mh_news_content` VALUES ('137', '145', '<span style=\"line-height:2;\">京建集团一直以来始终坚持“莫之与京，众建贤才”人才储备理念。</span><br />\n<span style=\"line-height:2;\"> 本着“教育就是最好的福利”2017年，集团设立了贤才事业部，以加强京建集团各公司在全国事业发展的相互合作。</span><br />\n<span style=\"line-height:2;\"> 为推进京建集团在全国事业的具体化发展，人才引进不可或缺。为此，我们将在全国区域积极地开展招聘，引进能够在今后肩负起京建集团未来发展重任的栋梁之才。集团将提供包括新媒体事业部，工业制造部，文化传媒部等多种工作岗位，为您提供职业发展的良好平台。</span><br />\n<span style=\"line-height:2;\"> 我们所需要的是能够积极接受新鲜事物等背景经历迥异的人才；能够通过自身的努力和创新，使集团内部乃至所有用户生活更加丰富多彩的有广大理想的人才。京建集团自设立以来，摒弃所有区别对待人才的观念，贯彻坚持以能力与成果来进行公正评判的方针。让每一个京建人都可以在不同的阶段，获得多方面的培训机会，通过不断的实践学习，以提高自身能力。</span><br />\n<p>\n	<span style=\"line-height:2;\"> 随着集团事业的不断扩大，我们会着力培养能够肩负集团发展重任的栋梁之才。我们热切盼望志存高远的您，加入京建这个大家庭，共创集团乃至个人的美好未来!!!</span>\n</p>\n<p align=\"center\">\n	<span style=\"line-height:2;\"><img src=\"/upfile/image/20180113/20180113072528_91741.jpg\" alt=\"\" /><br />\n</span>\n</p>');
-INSERT INTO `mh_news_content` VALUES ('131', '157', '1.京建集团支持客户深入装潢公司、小区、工装客户、建材销售商、网络社群把生意做出去。<br />\n2.好的设计能够促成订单，强大的设计团队支持，使您订单上升200%。<br />\n3.24*7的客服团队随时解答您反馈的一系列问题。');
-INSERT INTO `mh_news_content` VALUES ('132', '156', '订货如网上购物一样简单，系统兼容任何设备，数据一目了然，让运营更科学更高效（当然如果您不会网上购物，我们的代下单功能定能使您满意）。');
-INSERT INTO `mh_news_content` VALUES ('133', '155', '从装修到开业，门店管理指导&nbsp; 销售培训<br />\n我们坚持“教育就是最好的福利”通过我们保姆式的指导课程，让您的生意不在难做，口袋增值，脑袋更增值');
-INSERT INTO `mh_news_content` VALUES ('134', '154', '品牌传播<br />\n门店展示<br />\n持续曝光');
-INSERT INTO `mh_news_content` VALUES ('135', '153', '万物互联&nbsp; 通达未来<br />\n京建集团智能家居系列，搭配顶墙系列产品加强对空间设计的优化，连接家居系统，从而实现将家居生活有关的设施集成，构建高效的住宅设施与家庭日程事物的管理系统，提升家居的安全性、便捷性、舒适性、艺术性，并实现环保节能的居住环境。');
-INSERT INTO `mh_news_content` VALUES ('136', '152', '在不被普通装饰材料进驻的墙面，我们创造更多可能<br />\n中国集成墙面十大品牌&nbsp;&nbsp; 行业标准起草单位<br />\n中国绿色材料认证&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 集成墙面行业副会长单位<br />\n本企业通过ISO9001：2008质量管理体系认证&nbsp;&nbsp;&nbsp; 本企业通过ISO14001：2004环境管理体系认证&nbsp;&nbsp; 本企业通过OHSAS18001职业建康管理体系认证&nbsp;&nbsp;&nbsp; 央视助推优质企业&nbsp; 20余项专利 <br />\n<br />\n空间定制&nbsp; 材料模块化&nbsp; 任意结构&nbsp; 随意拼装&nbsp;&nbsp; 省事省力&nbsp;&nbsp; 便捷环保<br />\n<br />\n产品优势<br />\n除醛/耐污/易洁<br />\n产品采用天然竹木纤维粉，从生产到加工均对人体安全无害，可持续发展。<br />\n易清洁 更持久<br />\n覆膜表面经特殊处理、不惧油烟、不沾灰尘、即擦即净。<br />\n永不变形褪色<br />\n原料中添加色素稳定性配方，长时间使用不褪色');
+INSERT INTO `mh_news_content` VALUES ('138', '159', '品牌創建重點在于品牌形象要素的組織與設計。形而上以品牌文化戰略的實施爲導向，結合客觀的品牌認知\n過程和原理，幷根據當下市場環境中項目品牌化操作的實際所需，開發出精簡實用、行之有效的品牌創建工具\n和方法。通過基于品牌文化創意的系統化組織和概念化設計，將品牌創建落實爲品牌識別、品牌知識、品牌物\n料、品牌店鋪四個形象要素層面。幷借助形而上從平面到空間的綜合性設計解决能力，爲您的項目提供一體化\n的品牌創建解决方案。');
+INSERT INTO `mh_news_content` VALUES ('139', '160', '品牌管理重點在于項目品牌發展過程中的形象維護，具體落實到品牌的市場推廣、連鎖擴張、日常運營等方面\n的設計事務代理與監管。形而上基于既定的形象要素系統規範，在爲品牌發展提供標準化形象維護的同時，通\n過品牌文化的持續開發，也爲品牌帶來不斷更新的設計創意。幷根據品牌發展的不同階段和市場環境的不同變\n化，不斷完善和優化品牌形象要素系統。由此實現品牌形象的『動態標準化』維護過程，爲項目發展提供同步化\n的品牌管理解决方案。');
 
 -- ----------------------------
--- Table structure for `mh_news_label`
+-- Table structure for mh_news_label
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_news_label`;
 CREATE TABLE `mh_news_label` (
@@ -634,7 +598,7 @@ CREATE TABLE `mh_news_label` (
 INSERT INTO `mh_news_label` VALUES ('8', 'en', '1', '2213');
 
 -- ----------------------------
--- Table structure for `mh_region`
+-- Table structure for mh_region
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_region`;
 CREATE TABLE `mh_region` (
@@ -1033,7 +997,7 @@ INSERT INTO `mh_region` VALUES ('472', null, '阿拉尔', 'ale', '455', '', '255
 INSERT INTO `mh_region` VALUES ('473', null, '图木舒克', 'tmsk', '455', '', '255', '0', '0');
 
 -- ----------------------------
--- Table structure for `mh_role`
+-- Table structure for mh_role
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_role`;
 CREATE TABLE `mh_role` (
@@ -1052,7 +1016,7 @@ INSERT INTO `mh_role` VALUES ('6', '编辑权限', '1', '0000-00-00 00:00:00', '
 INSERT INTO `mh_role` VALUES ('7', '123', '1', '0000-00-00 00:00:00', '2017-12-26 15:40:41');
 
 -- ----------------------------
--- Table structure for `mh_role_access`
+-- Table structure for mh_role_access
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_role_access`;
 CREATE TABLE `mh_role_access` (
@@ -1084,7 +1048,7 @@ INSERT INTO `mh_role_access` VALUES ('418', '6', '28', '2017-11-07 17:58:34');
 INSERT INTO `mh_role_access` VALUES ('419', '6', '29', '2017-11-07 17:58:34');
 
 -- ----------------------------
--- Table structure for `mh_skin`
+-- Table structure for mh_skin
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_skin`;
 CREATE TABLE `mh_skin` (
@@ -1096,17 +1060,16 @@ CREATE TABLE `mh_skin` (
   `addtime` int(11) NOT NULL,
   `choice` tinyint(2) NOT NULL COMMENT '模板选中',
   PRIMARY KEY (`skid`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mh_skin
 -- ----------------------------
 INSERT INTO `mh_skin` VALUES ('1', '默认风格', 'default', '1', '0', '0', '1');
-INSERT INTO `mh_skin` VALUES ('5', '汇睿德', 'hrd', '0', '0', '1508723954', '0');
-INSERT INTO `mh_skin` VALUES ('6', '京建', 'jj', '0', '1', '1513493078', '0');
+INSERT INTO `mh_skin` VALUES ('7', '格尚', 'geerson', '0', '1', '1551066866', '0');
 
 -- ----------------------------
--- Table structure for `mh_typelist`
+-- Table structure for mh_typelist
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_typelist`;
 CREATE TABLE `mh_typelist` (
@@ -1120,6 +1083,7 @@ CREATE TABLE `mh_typelist` (
   `gotoid` int(11) unsigned NOT NULL DEFAULT '0',
   `lng` varchar(50) NOT NULL DEFAULT 'cn',
   `typename` varchar(150) NOT NULL COMMENT '名称',
+  `typename_en` varchar(150) NOT NULL,
   `content` text NOT NULL COMMENT '介绍',
   `headtitle` varchar(200) NOT NULL COMMENT '自定义TITLE',
   `keywords` varchar(80) NOT NULL DEFAULT '' COMMENT '自定义Keywords',
@@ -1150,39 +1114,15 @@ CREATE TABLE `mh_typelist` (
   `isorderby` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '显示排序',
   `ordertype` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '排序方式',
   PRIMARY KEY (`tid`)
-) ENGINE=MyISAM AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mh_typelist
 -- ----------------------------
-INSERT INTO `mh_typelist` VALUES ('83', '50', '1', '0', '0', '0', '0', '0', 'cn', '集团文化', '', '', '', '', '', '', '0', '1', '0', '1', '1', '3', '1', '', '', '', '', '', '0', '84', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('84', '50', '8', '83', '83', '0', '132', '0', 'cn', '使命', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'group_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('85', '50', '8', '83', '83', '0', '133', '0', 'cn', '价值观', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'group_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('86', '50', '8', '83', '83', '0', '134', '0', 'cn', '企业精神', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'group_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('87', '50', '8', '83', '83', '0', '135', '0', 'cn', '经营理念', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'group_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('88', '50', '8', '83', '83', '0', '136', '0', 'cn', '产业思维', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'group_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('89', '50', '8', '83', '83', '0', '137', '0', 'cn', '发展战略', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'group_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('90', '50', '8', '0', '0', '0', '138', '0', 'cn', '京建模式', '', '', '', '', '', '', '0', '1', '0', '1', '1', '4', '1', '', '', 'mode_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('91', '50', '8', '90', '90', '0', '139', '0', 'cn', '全屋整装', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'mode_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('92', '50', '8', '90', '90', '0', '140', '0', 'cn', '智能家居', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'mode_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('93', '50', '8', '90', '90', '0', '141', '0', 'cn', '装配平台', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'mode_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('94', '50', '1', '0', '0', '0', '0', '0', 'cn', '京建之策', '', '', '', '', '', '', '0', '1', '0', '1', '1', '3', '1', '', '', '', '', '', '0', '95', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('95', '50', '8', '94', '94', '0', '142', '0', 'cn', '政策红利及刚需分析', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'plan_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('96', '50', '8', '94', '94', '0', '143', '0', 'cn', '行业趋势', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'plan_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('97', '50', '8', '94', '94', '0', '144', '0', 'cn', '行业革命', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'plan_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('107', '7', '8', '100', '100', '0', '158', '0', 'cn', '留言栏', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'message_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('99', '100', '8', '0', '0', '0', '145', '0', 'cn', '人才招聘', '', '', '', '', '', '', '0', '1', '0', '1', '1', '4', '1', '', '', 'recruit_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('100', '50', '1', '0', '0', '0', '0', '0', 'cn', '招商加盟', '', '', '', '', '', '', '0', '1', '0', '1', '1', '3', '1', '', '', '', '', '', '0', '101', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('101', '1', '8', '100', '100', '0', '152', '0', 'cn', '墙板类', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'join_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('102', '2', '8', '100', '100', '0', '153', '0', 'cn', '家居类', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'join_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('103', '3', '8', '100', '100', '0', '154', '0', 'cn', '完善的品牌系统', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'join_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('104', '4', '8', '100', '100', '0', '155', '0', 'cn', '领先的店铺经营', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'join_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('105', '5', '8', '100', '100', '0', '156', '0', 'cn', '全新的ERP订货系统', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'join_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('106', '6', '8', '100', '100', '0', '157', '0', 'cn', '经营理念', '', '', '', '', '', '', '0', '0', '0', '1', '1', '4', '1', '', '', 'join_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
-INSERT INTO `mh_typelist` VALUES ('82', '1', '8', '0', '0', '0', '131', '0', 'cn', '企业简介', '', '', '', '', '/upfile/image/20180109/20180109121625_24271.jpg', '', '0', '1', '0', '1', '1', '4', '1', '', '', 'about_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
+INSERT INTO `mh_typelist` VALUES ('108', '50', '1', '0', '0', '0', '0', '0', 'cn', '格尚', 'GEERSON', '形而上設計，<br />\r\n集商業（品牌）設計與學術研究于一體。<br />\r\n長期以來，我們爲不同類型的項目提供品牌化設計支持，<br />\r\n致力于品牌形象的深度塑造，<br />\r\n協助客戶實現品牌的連鎖化、可持續發展。<br />\r\n我們堅持對品牌設計的本質思考與探索，<br />\r\n幷以專業觀念的持續創新，<br />\r\n引領業界走向新的未來。<br />', '格尚_t', '', '', '/upfile/image/20190225/20190225173302_62987.jpg', '', '0', '1', '0', '1', '1', '2', '1', '', 'company_list', 'company_read', '', '', '1', '0', '', '', '0', '', '', '0', '0', '1', '1');
 
 -- ----------------------------
--- Table structure for `mh_user`
+-- Table structure for mh_user
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_user`;
 CREATE TABLE `mh_user` (
@@ -1202,11 +1142,11 @@ CREATE TABLE `mh_user` (
 -- ----------------------------
 -- Records of mh_user
 -- ----------------------------
-INSERT INTO `mh_user` VALUES ('1', 'admin', '059c3304b11925e30d95801da52b4828', 'apanly@163.com', '1', '1', '2018-01-14 14:47:12', '2016-11-15 13:36:30', '2130706433');
+INSERT INTO `mh_user` VALUES ('1', 'admin', '059c3304b11925e30d95801da52b4828', 'apanly@163.com', '1', '1', '2019-02-25 11:53:18', '2016-11-15 13:36:30', '2130706433');
 INSERT INTO `mh_user` VALUES ('4', 'njhrd', 'c6805afe7c696853f2fa052c63c43b79', '123456@163.com', '0', '1', '2017-12-05 17:55:46', '2017-11-06 09:15:07', '-564142239');
 
 -- ----------------------------
--- Table structure for `mh_user_role`
+-- Table structure for mh_user_role
 -- ----------------------------
 DROP TABLE IF EXISTS `mh_user_role`;
 CREATE TABLE `mh_user_role` (
