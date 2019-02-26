@@ -1,0 +1,254 @@
+@charset "utf-8";
+@font-face {
+	font-family: 'mod20';
+	src: url('../Font/MOD20.TTF'); 
+}
+@font-face {
+	font-family: 'GothamExLight';
+	src: url('../Font/GothamExLight.otf'); 
+}
+@font-face {
+	font-family: 'GothamBook';
+	src: url('../Font/GothamBook.otf'); 
+}
+/* +--------------------------------------------------------------------**
+** | 样式表
+** +--------------------------------------------------------------------*/
+body {
+	color: #333;
+	font-size: 13px;
+	font-family: arial, "微软雅黑";
+	line-height: 180%;
+	background: #FFF;
+	min-width: 960px;
+}
+.wrap {
+	width: 1030px;
+	margin: 0 auto;
+}
+.header {
+	height: 120px;
+	background: #FFF;
+}
+.mt120 {
+	margin-top: 120px;
+}
+.mb180 {
+	margin-bottom: 180px;
+}
+.nav {
+	padding: 40px 0px 40px 25px;
+}
+.nav ul {
+	list-style: none;
+	height: 40px;
+	overflow: hidden;
+	display: block;
+}
+.nav ul li {
+	float: left;
+	height: 40px;
+}
+.nav ul li a {
+	font-size: 12px;
+	text-align: center;
+	color: #333;
+	text-decoration: none;
+	margin-top: -40px;
+	margin-left: 25px;
+	margin-right: 25px;
+	transition: 0.3s cubic-bezier(0.1, 0.1, 0.5, 1.4);
+	cursor: pointer;
+	font-family: 'GothamBook';
+}
+.nav ul li * {
+	display: inline-block;
+	font-size: 12px;
+	line-height: 40px;
+}
+.nav ul li a:hover {
+	margin-top: 0;
+}
+.nav ul li a.cur {
+	margin-top: 0;
+	content: attr(data-text);
+	display: block;
+	color: #333;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+.nav ul li a:before {
+	content: attr(data-text);
+	display: block;
+	color: #333;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+.logo {
+	padding: 35px 50px 35px 0px;
+}
+.logo a {
+	width: 150px;
+	height: 50px;
+	display: block;
+}
+
+/*banner*/
+#kinMaxShow {
+	width: 100%;
+	height: auto;
+	display: none;
+}
+.project ul {
+	list-style: none;
+}
+.project ul li {
+	width: 50%;
+	height: auto;
+	overflow: hidden;
+	float: left;
+	position: relative;
+}
+.project ul li img {
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;
+	display: block;
+	transition: all 0.5s;
+}
+.project ul li a img:hover {
+	transition: all 0.5s;
+}
+.project ul li span.title {
+	position: absolute;
+	bottom: 50px;
+	font-size: 28px;
+	left: 20px;
+	color: #FFF;
+	letter-spacing: 1px;
+	font-family: 'mod20';
+}
+.project ul li span.small {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	color: #fff;
+	font-size: 12px;
+	letter-spacing: 1px;
+	font-family: 'GothamExLight';
+}
+.imggray img {
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
+}
+.imggray img:hover {
+	-webkit-filter: grayscale(0);
+	-moz-filter: grayscale(0);
+	-ms-filter: grayscale(0);
+	-o-filter: grayscale(0);
+	filter: grayscale(0);
+}
+.project-show {
+	background: #F5F5F5;
+}
+/*.project-show-title {
+	padding-top: 100px;
+	font-size: 35px;
+	font-family: 'Baskerville';
+}
+.project-show-small {
+	padding-top: 10px;
+	font-size: 12px;
+	font-family: 'Hiragino Sans W0';
+}
+.project-show-key {
+	padding-top: 50px;
+	font-size: 25px;
+}
+.project-show-short {
+	padding-top: 20px;
+	padding-bottom: 100px;
+	line-height: 25px;
+	font-size: 12px;
+}*/
+.project-show-content img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.info ul {
+	list-style: none;
+}
+.info ul li {
+	width: 50%;
+	height: auto;
+	float: left;
+}
+.info ul li img {
+	width: 100%;
+	height: auto;
+	display: block;
+	vertical-align: bottom;
+}
+.info-title {
+	font-size: 20px;
+	font-family: 'mod20';
+}
+.info-content {
+	font-size: 12px;
+}
+.info-small {
+	font-size: 13px;
+	font-family: 'GothamExLight';
+}
+.info-more {
+	font-size: 12px;
+	max-height: 200px;
+	overflow-y: auto;
+}
+.info-other {
+	font-size: 12px;
+	margin-top: 123px;
+}
+.contact-img img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.footer {
+	width: 100%;
+	height: 155px;
+	display: block;
+}
+.footer-left {
+	margin-left: 50px;
+	margin-top: 40px;
+}
+.footer-left a {
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	color: #333;
+}
+.footer-left a:hover {
+	color: #a5a5a5
+}
+.copyright {
+	padding-top: 20px;
+}
+.footer-right {
+	margin-right: 50px;
+	margin-top: 90px;
+}
+.footer-right ul {
+	list-style: none;
+}
+.footer-right ul li {
+	float: left;
+	width: 200px;
+	display: block;
+}

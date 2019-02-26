@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0; }
+body, button, input, select, textarea { font: 12px/1.5 微软雅黑, Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+address, cite, dfn, em, i, var { font-style: normal; }
+ul, ol { list-style: none; }
+legend { color: #000; }
+fieldset, img { border: 0; vertical-align: bottom; }
+section, article, aside, header, footer, nav, dialog, figure { display: block; }
+figure { margin: 0; }
+button, input, select, textarea { font-size: 100%; border:0; background:none; outline:none; }
+table { border-collapse: collapse; border-spacing: 0; }
+.clear { display: block; height: 0; overflow: hidden; clear: both; }
+.clearfix:after { content: '\20'; display: block; height: 0; clear: both; }
+.clearfix { *zoom:1;}
+a:link, a:visited, a:hover, a:active { text-decoration: none; }
+.fl{ float:left;}
+
+.wrap { width:1200px; margin:0 auto; }
+/*header*/
+.topArea {width:100%;background:#262626;}
+.logo { float:left; }
+.nav { float:left; margin-right:1px; }
+.nav ul li{ float:left;}
+.nav ul li a {float:left; text-align:center;  display:block; width:105px; line-height:62px; font-size:16px;  cursor:pointer;   height:62px; color:#cecece; margin-bottom:3px; }
+.nav ul li:hover a,.nav ul li a.cur{ color:#cf5c26;border-bottom:3px solid #cf5c26; margin-bottom:-3px;  }
+
+/**/
+.nav .sub { position:absolute; width:100%; top:65px; left:0; display:none; background:url(../images/nav.png) repeat; z-index:999; }
+.nav .sub dl { float:left; height:45px; line-height:45px; margin-left:25px; }
+.nav .sub dl dt { float:left; color:#aeadab; }
+.nav .sub dl dt a { color:#fff; padding:0 10px; }
+.nav .sub dl dt a:hover { color:#23a2eb; }
+.nav .subnav { width:965px; margin:0 auto; padding-left:235px; }
+/*上传图纸*/
+.header_right{ float:right;}
+.header_btn{float:left; margin:13.5px 0;  margin-right:20px;}
+.header_btn a:hover{ opacity:0.9;}
+.header_login{ float:left; line-height:65px; color:#cecece;   font-size:16px;}
+.header_login a{ color:#cecece;}
+.header_login a:hover{ color:#d05d27;}
+/*首页电话*/
+.head_tel{ background:#474747; height:38px; line-height:38px; color:#c4c4c4; text-align:right; font-size:15px;}
+/*banner*/
+.full_banner {margin-top:0px; width: 100%;position: relative;height: 500px;background: #FFF;overflow: hidden;}
+.full_banner .bd {margin: 0 auto;position: relative;z-index: 0;overflow: hidden;}
+.full_banner .bd ul {width: 100% !important;}
+.full_banner .bd li {width: 100% !important;float: left;height: 500px;overflow: hidden;text-align: center;}
+.full_banner .bd li a {display: block;height: 480px;}
+.full_banner .hd {width: 100%;position: absolute;z-index: 1;bottom: 10px;left: 0;height: 30px;line-height: 30px;text-align: center;}
+.full_banner .hd ul {text-align: center;padding-top: 0px;}
+.full_banner .hd ul li {cursor: pointer;display: inline-block;*display: inline;zoom: 1;width: 45px;height: 4px;margin: 5px;background: #fff;text-indent: -999999px;}
+.full_banner .hd ul .on {background: #ff8a0d;}
+.full_banner .bd li img {left: 50%;margin-left: -960px;position: absolute;}
+.banner{ width:100%;}
+.banner img { width:100%; height:345px;}
+/*footer*/
+.footer { background:#282828; }
+.footer01 { padding:20px 0; }
+.footer01 .network { float:left; }
+.footer01 .network dl { float:left; width:190px; text-align:center; min-height:170px; }
+.footer01 .network dl dt { font-size:15px; color:#666666; margin-bottom:10px; }
+.footer01 .network dl dd { font-size:13px; line-height:25px; }
+.footer01 .network dl dd a { color:#666666; }
+.footer01 .network dl dd a:hover { color:#d05d27; }
+
+.footer01 .txt { float:right; width:300px; height:170px; padding-left:40px; background:url(../images/footer01.jpg) left top no-repeat;}
+.footer01 .txt h1 { font-weight:normal; font-size:15px;  color:#666666; margin-bottom:10px;  }
+.footer01 .txt p { color:#666666; line-height:25px; }
+.footer01 .txt p i { color:#666666; }
+
+.footer01 .code { float:right; width:114px; height:170px; padding-left:30px; background:url(../images/footer01.jpg) left top no-repeat; margin-right:100px; }
+.footer01 .code h1 { font-size:15px; color:#dadee6; line-height:1; margin-bottom:10px; font-weight:normal; }
+.footer01 .code span { display:block; color:#bbb; margin-top:10px; text-align:center; }
+.footer02 { height:50px; line-height:50px; text-align:center; border-top:1px solid #333333; color:#666666; text-transform:uppercase; }
+.footer02 a { color:#666666; }
+.footer02 a:hover { color:#cf5c26; }

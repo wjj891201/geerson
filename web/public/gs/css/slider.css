@@ -1,0 +1,131 @@
+.rslides {
+	position: relative;
+	list-style: none;
+	overflow: hidden;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.rslides li {
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	display: none;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.rslides li:first-child {
+	position: relative;
+	display: block;
+	float: left;
+}
+.rslides img {
+	display: block;
+	height: auto;
+	float: left;
+	width: 100%;
+	border: 0;
+}
+.slide_container {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+.slide {
+	position: relative;
+	list-style: none;
+	overflow: hidden;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+.slide li {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+.slide img {
+	display: block;
+	position: relative;
+	z-index: 1;
+	height: auto;
+	width: 100%;
+	border: 0;
+}
+.slide .caption {
+	display: block;
+	position: absolute;
+	z-index: 2;
+	text-shadow: none;
+	color: #fff;
+	max-width: none;
+	top: 47%;
+	left: 50%;
+	width: 800px;
+	margin-left: -400px;
+	font-size: 3em;
+	text-align: center;
+	letter-spacing: 3px;
+	font-family: 'mod20';
+}
+.slide .links a {
+	position: absolute;
+	top: 53%;
+	left: 50%;
+	margin-left: -57px;
+	text-align: center;
+	width: 115px;
+	height: 22px;
+	display: block;
+	z-index: 19890703;
+}
+.slide .links a span.small {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: #FFF;
+	width: 115px;
+	height: 20px;
+	line-height: 22px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	display: block;
+	text-align: center;
+	font-family: 'GothamExLight';
+}
+.slide .links a span.opacity {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 115px;
+	height: 20px;
+	border: 1px solid #FFF;
+	display: block;
+	border-radius: 10px;
+	background: none;
+	transition: all 0.5s;
+}
+.slide .links a span.opacity:hover {
+	background: #FFF;
+	opacity: 0.3;
+	transition: all 0.5s;
+}
+.slide_nav {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 3;
+	text-indent: -9999px;
+	height: 500px;
+	margin-top: -250px;
+	width: 80px;
+}
+.slide_nav:active {
+	opacity: 1.0;
+}
+.slide_nav.next {
+	left: auto;
+	width: 80px;
+	right: 0;
+}

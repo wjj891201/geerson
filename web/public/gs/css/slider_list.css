@@ -1,0 +1,22 @@
+.krakatoa {
+	display: none;
+	margin: 0 auto;
+}
+.krakatoa-control {
+}
+.arrow a {
+	position: absolute;
+	top: 50%;
+	display:block;
+	width:45px;
+	height:260px;
+	margin-top: -130px;
+	cursor:pointer;
+	z-index: 100;
+}
+.arrow-left a {
+	left: 0;
+}
+.arrow-right a {
+	right: 0;
+}
