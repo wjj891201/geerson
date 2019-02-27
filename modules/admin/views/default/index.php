@@ -12,13 +12,13 @@
                         <td width="100" valign="top">MySQL 版本：</td>
                         <td valign="top"> 5.0.11 </td>
                         <td width="100" valign="top">服务器操作系统：</td>
-                        <td valign="top"> <?= php_uname('s')?> </td>
+                        <td valign="top"> <?= php_uname('s') ?> </td>
                     </tr>
                     <tr>
                         <td valign="top">文件上传限制：</td>
                         <td valign="top">2M</td>
                         <td valign="top">GD 库支持：</td>
-                        <td valign="top"><?php if(function_exists('imagecreate')):?>支持<?php else:?>不支持<?php endif;?></td>
+                        <td valign="top"><?php if (function_exists('imagecreate')): ?>支持<?php else: ?>不支持<?php endif; ?></td>
                         <td valign="top">Web 服务器：</td>
                         <td valign="top"></td>
                     </tr>
@@ -30,12 +30,8 @@
             <ul>
                 <table width="100%" border="0" cellspacing="0" cellpadding="7" class="tableBasic">
                     <tr>
-                        <td width="120"> 江苏任意推： </td>
-                        <td><a href="http://www.renyitui.com" target="_blank">http://www.renyitui.com</a></td>
-                    </tr>
-                    <tr>
-                        <td> 开发者： </td>
-                        <td> 江苏任意推</td>
+                        <td width="120">开发者：</td>
+                        <td>15195861092</td>
                     </tr>
                     <tr>
                         <td> 系统使用协议： </td>
