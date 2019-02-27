@@ -10,7 +10,7 @@ use yii\helpers\Url;
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>格尚后台登录</title>
+        <title>格上后台登录</title>
         <meta name="author" content="DeathGhost">
         <link rel="stylesheet" type="text/css" href="/public/backend/css/style.css" tppabs="css/style.css">
         <style>
@@ -33,7 +33,7 @@ use yii\helpers\Url;
         <canvas class="pg-canvas" width="1366" height="635"></canvas>
         <dl class="admin_login">
             <dt>
-                <strong>格尚网站后台管理系统</strong>
+                <strong>格上网站后台管理系统</strong>
                 <em>Management System</em>
             </dt>
             <?php
