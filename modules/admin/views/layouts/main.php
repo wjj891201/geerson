@@ -10,7 +10,7 @@ AdminAsset::register($this);
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>格尚后台管理</title>
+        <title>格上后台管理</title>
         <?php $this->head() ?>
     </head>
     <body>

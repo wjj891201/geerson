@@ -46,7 +46,7 @@ GsAsset::register($this);
         <div class="footer">
             <div class="footer-left fl">
                 <a href="project/index.html">ALL PROJECTS</a>
-                <div class="copyright">Sens Design all right reserved.</div>
+                <div class="copyright">Geerson Brand Design all right reserved.</div>
             </div>
             <div class="footer-right fr">
                 <ul>
