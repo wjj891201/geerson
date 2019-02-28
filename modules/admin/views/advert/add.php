@@ -11,22 +11,25 @@ $this->registerJsFile('@web/public/backend/js/kindeditor/lang/zh_CN.js', ['depen
 ?>
 
 <script>
-    KindEditor.ready(function(K) {        
+    KindEditor.ready(function (K) {
+        K.create('#advert-content', {afterBlur: function () {
+                this.sync();
+            }});
         var editor = K.editor({
-            allowFileManager : true  //开启多文件上传
+            allowFileManager: true  //开启多文件上传
         });
-        $("#upload-image-filename").click(function() {
-            editor.loadPlugin("image", function() {
+        $("#upload-image-filename").click(function () {
+            editor.loadPlugin("image", function () {
                 editor.plugin.imageDialog({
-                    showRemote : false,
-                    clickFn : function(url) {
+                    showRemote: false,
+                    clickFn: function (url) {
                         $("#filename").val(url);
-                        $(".fileupload-preview").html('<img src="'+url+'" style="width:200px;height:150px;"/>');
+                        $(".fileupload-preview").html('<img src="' + url + '" style="width:200px;height:150px;"/>');
                         editor.hideDialog();
                     }
                 });
             });
-        }); 
+        });
     });
 </script>
 <div id="dcMain">
@@ -114,23 +117,23 @@ $this->registerJsFile('@web/public/backend/js/kindeditor/lang/zh_CN.js', ['depen
 
 
 <script>
-    
-    $(function(){  
-        $("input[name='Advert[islink]']").on('change', function() {
-            if($(this).val()==1){
+
+    $(function () {
+        $("input[name='Advert[islink]']").on('change', function () {
+            if ($(this).val() == 1) {
                 $('.t_url').show();
                 $('.t_tar').hide();
-            }else{
+            } else {
                 $('.t_tar').show();
                 $('.t_url').hide();
             }
         });
     });
-    
-    function selectinfo(val){
-        if (val==1){
+
+    function selectinfo(val) {
+        if (val == 1) {
             $('#filenamestr').removeClass('displaynone').addClass('displaytrue');
-        }else if(val==2){
+        } else if (val == 2) {
             $('#filenamestr').removeClass('displaytrue').addClass('displaynone');
         }
     }

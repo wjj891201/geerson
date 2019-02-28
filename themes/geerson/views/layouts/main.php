@@ -4,6 +4,7 @@ use app\assets\GsAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\models\Type;
+use app\models\Advert;
 
 GsAsset::register($this);
 ?>
@@ -50,12 +51,10 @@ GsAsset::register($this);
             </div>
             <div class="footer-right fr">
                 <ul>
-                    <li>0574-2789-0110<span class="ml10"></span><Br>135-8688-4554<span class="ml10">邹老师</span></li>
-                    <li>mail@sensbc.com<Br>www.sensbc.com</li>
-                    <li>
-                        浙江省宁波市鄞州区启明路818号<br />
-                        创新128园区12幢90号
-                    </li>
+                    <?php $words = Advert::get_ad(['atid' => 15]); ?>
+                    <?php foreach ($words as $key => $vo): ?>
+                        <li><?= $vo['content'] ?></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
