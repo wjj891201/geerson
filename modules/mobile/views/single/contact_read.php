@@ -15,6 +15,3 @@ $this->registerMetaTag(['name' => 'description', 'content' => $info['description
         <?= $info['content']['content'] ?>
     </div>
 </div>
-<style>
-    img{width: 100%;}
-</style>
