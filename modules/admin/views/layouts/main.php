@@ -45,29 +45,29 @@ AdminAsset::register($this);
                         <li><a href="<?= Url::to(['default/index']); ?>"><i class="home"></i><em>管理首页</em></a></li>
                     </ul>
                     <ul>
-                        <li><a href="<?= Url::to(['model/list']); ?>"><i class="caseCat"></i><em>内容模型管理</em></a></li>
+                        <!--<li><a href="<? Url::to(['model/list']); ?>"><i class="caseCat"></i><em>内容模型管理</em></a></li>-->
                         <li><a href="<?= Url::to(['type/list']); ?>"><i class="articleCat"></i><em>分类管理</em></a></li>
-                        <li><a href="<?= Url::to(['recommend/list']); ?>"><i class="nav"></i><em>推荐位管理</em></a></li>
+                        <!--<li><a href="<? Url::to(['recommend/list']); ?>"><i class="nav"></i><em>推荐位管理</em></a></li>-->
                         <li><a href="<?= Url::to(['news/list']); ?>"><i class="product"></i><em>内容管理</em></a></li>
                     </ul>
                     <ul>
                         <li><a href="<?= Url::to(['adverttype/list']); ?>"><i class="theme"></i><em>广告位管理</em></a></li>
                         <li><a href="<?= Url::to(['advert/adlist']); ?>"><i class="show"></i><em>广告内容管理</em></a></li> 
                     </ul>
-                    <ul>
-                        <li><a href="<?= Url::to(['lng/list']); ?>"><i class="plugin"></i><em>多语言管理</em></a></li>
+<!--                    <ul>
+                        <li><a href="<? Url::to(['lng/list']); ?>"><i class="plugin"></i><em>多语言管理</em></a></li>
                     </ul>
                     <ul>
-                        <li><a href="<?= Url::to(['skin/list']); ?>"><i class="managerLog"></i><em>网站主题</em></a></li>
+                        <li><a href="<? Url::to(['skin/list']); ?>"><i class="managerLog"></i><em>网站主题</em></a></li>
                     </ul>
                     <ul>
-                        <li><a href="<?= Url::to(['formgroup/list']); ?>"><i class="article"></i><em>自助表单管理</em></a></li>
+                        <li><a href="<? Url::to(['formgroup/list']); ?>"><i class="article"></i><em>自助表单管理</em></a></li>
                     </ul>
                     <ul>
-                        <li><a href="<?= Url::to(['manage/list']); ?>"><i class="manager"></i><em>网站管理员</em></a></li>
-                        <li><a href="<?= Url::to(['role/list']); ?>"><i class="system"></i><em>角色管理</em></a></li>
-                        <li><a href="<?= Url::to(['access/list']); ?>"><i class="page"></i><em>权限管理</em></a></li>
-                    </ul>
+                        <li><a href="<? Url::to(['manage/list']); ?>"><i class="manager"></i><em>网站管理员</em></a></li>
+                        <li><a href="<? Url::to(['role/list']); ?>"><i class="system"></i><em>角色管理</em></a></li>
+                        <li><a href="<? Url::to(['access/list']); ?>"><i class="page"></i><em>权限管理</em></a></li>
+                    </ul>-->
                 </div>
             </div>
 
