@@ -31,6 +31,7 @@ MbAsset::register($this);
                 <?php if ($this->context->id == 'article' && ($this->params['topid'] == 110 || $_GET['tid'] == 110)): ?>
                     <?php $tid_arr = Type::find()->select('tid')->where(['upid' => 110])->asArray()->column(); ?>
                     <?php $works = Type::find()->select(['tid', 'typename', 'typename_en'])->where(['tid' => $tid_arr])->asArray()->orderBy(['pid' => SORT_ASC])->all(); ?>
+                    <a href="<?= Url::to(['mobile/article/list', 'tid' => 110]) ?>" style="animation-delay: 0s;">ALL</a>
                     <?php foreach ($works as $key => $vo): ?>
                         <a href="<?= Type::getMobileUrl($vo['tid']); ?>" style="animation-delay: 0s;"><?= $vo['typename_en'] ?></a>
                     <?php endforeach; ?>

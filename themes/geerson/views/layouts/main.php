@@ -26,6 +26,7 @@ GsAsset::register($this);
                     <?php if ($this->context->id == 'article' && ($this->params['topid'] == 110 || $_GET['tid'] == 110)): ?>
                         <?php $tid_arr = Type::find()->select('tid')->where(['upid' => 110])->asArray()->column(); ?>
                         <?php $works = Type::find()->select(['tid', 'typename', 'typename_en'])->where(['tid' => $tid_arr])->asArray()->orderBy(['pid' => SORT_ASC])->all(); ?>
+                        <li><a data-text='所有' href="<?= Url::to(['article/list', 'tid' => 110]) ?>">ALL</a></li>
                         <?php foreach ($works as $key => $vo): ?>
                             <li><a data-text='<?= $vo['typename'] ?>' href="<?= Type::getUrl($vo['tid']); ?>"><?= $vo['typename_en'] ?></a></li>
                         <?php endforeach; ?>
@@ -46,8 +47,9 @@ GsAsset::register($this);
         <div class="clr"></div>
         <div class="footer">
             <div class="footer-left fl">
-                <a href="project/index.html">ALL PROJECTS</a>
+                <a href="<?= Url::to(['article/list', 'tid' => 110]) ?>">ALL PROJECTS</a>
                 <div class="copyright">Geerson Brand Design all right reserved.</div>
+                <div class="copyright"><?= $this->params['config']['icpbeian'] ?></div>
             </div>
             <div class="footer-right fr">
                 <ul>
