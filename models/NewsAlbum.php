@@ -29,7 +29,7 @@ class NewsAlbum extends ActiveRecord
 
     public static function getAll($where = [])
     {
-        $result = self::find()->where($where)->orderBy(['picsort' => SORT_DESC])->all();
+        $result = self::find()->where($where)->orderBy(['picsort' => SORT_ASC])->all();
         return $result;
     }
 
