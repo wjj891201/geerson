@@ -22,13 +22,13 @@ class News extends ActiveRecord
     public function rules()
     {
         return [
-            ['name', 'required', 'message' => '名称不能为空'],
-            ['category', 'required', 'message' => '分类不能为空'],
-            ['summary', 'required', 'message' => '简要概述不能为空'],
-            ['content', 'required', 'message' => '描述不能为空'],
-            ['displayorder', 'required', 'message' => '排序不能为空'],
-            ['displayorder', 'integer', 'message' => '请填写整数'],
-            [['thumb', 'status', 'title', 'keywords', 'description', 'createtime'], 'safe']
+                ['name', 'required', 'message' => '名称不能为空'],
+                ['category', 'required', 'message' => '分类不能为空'],
+                ['summary', 'required', 'message' => '简要概述不能为空'],
+                ['content', 'required', 'message' => '描述不能为空'],
+                ['displayorder', 'required', 'message' => '排序不能为空'],
+                ['displayorder', 'integer', 'message' => '请填写整数'],
+                [['thumb', 'status', 'title', 'keywords', 'description', 'createtime'], 'safe']
         ];
     }
 
@@ -76,22 +76,22 @@ class News extends ActiveRecord
         $where = 'isclass=1';
         if (!empty($mid))
         {
-            $where.=" AND mid=$mid";
+            $where .= " AND mid=$mid";
         }
         if (!empty($recommend))
         {
-            $where.=" AND FIND_IN_SET('$recommend',recommend)";
+            $where .= " AND FIND_IN_SET('$recommend',recommend)";
         }
         if (!empty($tid) && !empty($mid))
         {
             $cate = Type::getData(['lng' => $lng]);
             $tids = Type::getChildsid($cate, $tid);
             array_unshift($tids, (string) $tid);
-            $where.=" AND tid IN (" . implode(',', $tids) . ")";
+            $where .= " AND tid IN (" . implode(',', $tids) . ")";
         }
         if (!empty($lng))
         {
-            $where.=" AND lng='$lng'";
+            $where .= " AND lng='$lng'";
         }
         $news = self::find()->select(['did', 'tid', 'title', 'pic', 'summary', 'addtime'])->where($where)->limit($limit)->orderBy(['pid' => SORT_DESC, 'addtime' => SORT_DESC])->all();
         return $news;
@@ -114,7 +114,7 @@ class News extends ActiveRecord
 
     public function getAlbum()
     {
-        return $this->hasMany(NewsAlbum::className(), ['did' => 'did']);
+        return $this->hasMany(NewsAlbum::className(), ['did' => 'did'])->orderBy(['picsort' => SORT_ASC]);
     }
 
     /**
