@@ -33,6 +33,7 @@ $this->registerJsFile('@web/public/backend/js/My97DatePicker/WdatePicker.js', ['
                                         var html = "<li>";
                                         html += "<img src='" + list[i]['url'] + "' />";
                                         html += "<span><a href=\"javascript:;\" onclick=\"deletepic(this);\">删除</a></span>";
+                                        html += "<input name=\"picsort[]\" value='" + i + "' class=\"inpMain\" type=\"text\" style=\"text-align:center;\">";
                                         html += "<input type=\"hidden\" name=\"picfile[]\" value=" + list[i]['url'] + " />";
                                         html += "</li>";
                                         $('.imglist').append(html);

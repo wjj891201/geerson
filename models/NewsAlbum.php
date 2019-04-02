@@ -13,23 +13,23 @@ class NewsAlbum extends ActiveRecord
         return "{{%news_album}}";
     }
 
-    public static function install_pic($did, $picfile = null, $del = true)
+    public static function install_pic($did, $picfile = null, $del = true, $picsort = null)
     {
         if ($del)
         {
             self::deleteAll('did=:did', [':did' => $did]);
         }
         $time = time();
-        foreach ($picfile as $vo)
+        foreach ($picfile as $key => $vo)
         {
-            Yii::$app->db->createCommand()->insert("{{%news_album}}", ['did' => $did, 'picfile' => $vo, 'addtime' => $time])->execute();
+            Yii::$app->db->createCommand()->insert("{{%news_album}}", ['did' => $did, 'picfile' => $vo, 'picsort' => $picsort[$key], 'addtime' => $time])->execute();
         }
         return true;
     }
 
     public static function getAll($where = [])
     {
-        $result = self::find()->where($where)->all();
+        $result = self::find()->where($where)->orderBy(['picsort' => SORT_DESC])->all();
         return $result;
     }
 

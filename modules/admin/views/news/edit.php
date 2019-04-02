@@ -13,28 +13,31 @@ $this->registerJsFile('@web/public/backend/js/layer/layer.js', ['depends' => ['a
 $this->registerJsFile('@web/public/backend/js/My97DatePicker/WdatePicker.js', ['depends' => ['app\assets\AdminAsset'], 'position' => View::POS_HEAD]);
 ?>
 <script>
-    KindEditor.ready(function(K) {
-        K.create('#content',{afterBlur: function () { this.sync(); }});
+    KindEditor.ready(function (K) {
+        K.create('#content', {afterBlur: function () {
+                this.sync();
+            }});
         var editor = K.editor({
-            allowFileManager : true  //开启多文件上传
+            allowFileManager: true  //开启多文件上传
         });
-        
-        
-        
+
+
+
 <?php if ($md['isalbum'] == 1): ?>
             var i = 0;
-            K('#selectimage').click(function() {
-                editor.loadPlugin('multiimage', function() {
+            K('#selectimage').click(function () {
+                editor.loadPlugin('multiimage', function () {
                     editor.plugin.multiImageDialog({
-                        clickFn : function(list) {
+                        clickFn: function (list) {
                             if (list && list.length > 0) {
                                 for (i in list) {
                                     if (list[i]) {
-                                        var html="<li>";
-                                        html+="<img src='"+list[i]['url']+"' />";
-                                        html+="<span><a href=\"javascript:;\" onclick=\"deletepic(this);\">删除</a></span>";
-                                        html+="<input type=\"hidden\" name=\"picfile[]\" value="+list[i]['url']+" />";
-                                        html+="</li>";                            
+                                        var html = "<li>";
+                                        html += "<img src='" + list[i]['url'] + "' />";
+                                        html += "<span><a href=\"javascript:;\" onclick=\"deletepic(this);\">删除</a></span>";
+                                        html += "<input name=\"picsort[]\" value='" + i + "' class=\"inpMain\" type=\"text\" style=\"text-align:center;\">";
+                                        html += "<input type=\"hidden\" name=\"picfile[]\" value=" + list[i]['url'] + " />";
+                                        html += "</li>";
                                         $('.imglist').append(html);
                                         i++;
                                     }
@@ -48,81 +51,83 @@ $this->registerJsFile('@web/public/backend/js/My97DatePicker/WdatePicker.js', ['
                 });
             });
 <?php endif; ?>
-        
-        
-        
+
+
+
 <?php foreach ($modelatt as $key => $vo): ?>
     <?php if ($vo['inputtype'] == 'editor' && $vo['attrname'] != 'content'): ?>
-                    K.create('#<?= $vo['attrname'] ?>', {
-                        resizeType : 1,
-                        allowPreviewEmoticons : false,
-                        allowImageUpload : false,
-                        items : [
-                            'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-                            'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                            'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
-                        afterBlur: function () { this.sync(); }
-                    });
+                K.create('#<?= $vo['attrname'] ?>', {
+                    resizeType: 1,
+                    allowPreviewEmoticons: false,
+                    allowImageUpload: false,
+                    items: [
+                        'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                        'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                        'insertunorderedlist', '|', 'emoticons', 'image', 'link'],
+                    afterBlur: function () {
+                        this.sync();
+                    }
+                });
     <?php endif; ?>
-    <?php if ($vo['inputtype'] == 'img'): ?>                              
-                    $("#upload-image-<?= $vo['attrname'] ?>").click(function() {
-                        editor.loadPlugin("image", function() {
-                            editor.plugin.imageDialog({
-                                showRemote : false,
-                                clickFn : function(url) {
-                                    $("#<?= $vo['attrname'] ?>").val(url);
-                                    $(".fileupload-preview-<?= $vo['attrname'] ?>").html('<img src="'+url+'" style="width:200px;height:150px;"/>');
-                                    editor.hideDialog();
-                                }
-                            });
+    <?php if ($vo['inputtype'] == 'img'): ?>
+                $("#upload-image-<?= $vo['attrname'] ?>").click(function () {
+                    editor.loadPlugin("image", function () {
+                        editor.plugin.imageDialog({
+                            showRemote: false,
+                            clickFn: function (url) {
+                                $("#<?= $vo['attrname'] ?>").val(url);
+                                $(".fileupload-preview-<?= $vo['attrname'] ?>").html('<img src="' + url + '" style="width:200px;height:150px;"/>');
+                                editor.hideDialog();
+                            }
                         });
-                    });              
-    <?php endif; ?>                                                                                                                                                                                             
+                    });
+                });
+    <?php endif; ?>
 <?php endforeach; ?>
     })
-    
-    $(document).ready(function(){
+
+    $(document).ready(function () {
         var options = {
             beforeSubmit: formverify,
-            success:saveResponse,
+            success: saveResponse,
             resetForm: false
         };
-        $('#newsadd').submit(function() {
+        $('#newsadd').submit(function () {
             $(this).ajaxSubmit(options);
             return false;
         });
-    }); 
-    
+    });
+
     function formverify(formData, jqForm, options) {
         var queryString = $.param(formData);
-        var get=urlarray(queryString);
+        var get = urlarray(queryString);
 <?php foreach ($modelatt as $key => $vo): ?>
     <?php if ($vo['isvalidate'] == 1): ?>
         <?php if ($vo['validatetext'] != ''): ?>
-                            if(get['<?= $vo['attrname'] ?>'].match(<?= $vo['validatetext'] ?>)==null) {
-                                layer.msg('<?= $vo['typename'] ?>'+'填写错误',{icon:2,time:1000});  
-                                $('#<?= $vo['attrname'] ?>').focus();
-                                return false;
-                            }
-        <?php else: ?>  
-                            if(get['<?= $vo['attrname'] ?>']==''){
-                                layer.msg('<?= $vo['typename'] ?>'+'填写错误',{icon:2,time:1000});  
-                                $('#<?= $vo['attrname'] ?>').focus();
-                                return false;                                                                  
-                            }
-        <?php endif; ?>  
+                    if (get['<?= $vo['attrname'] ?>'].match(<?= $vo['validatetext'] ?>) == null) {
+                        layer.msg('<?= $vo['typename'] ?>' + '填写错误', {icon: 2, time: 1000});
+                        $('#<?= $vo['attrname'] ?>').focus();
+                        return false;
+                    }
+        <?php else: ?>
+                    if (get['<?= $vo['attrname'] ?>'] == '') {
+                        layer.msg('<?= $vo['typename'] ?>' + '填写错误', {icon: 2, time: 1000});
+                        $('#<?= $vo['attrname'] ?>').focus();
+                        return false;
+                    }
+        <?php endif; ?>
     <?php endif; ?>
 <?php endforeach; ?>
-        if(get['tid']==0){
-            layer.msg('所属分类未选择',{icon:2,time:1000});  
+        if (get['tid'] == 0) {
+            layer.msg('所属分类未选择', {icon: 2, time: 1000});
             $('#tid').focus();
             return false;
         }
     }
-    function saveResponse(options){
-        layer.msg(options,{icon:1,time:2000},function(){
-            window.location.href="<?= Url::to(['news/list']) ?>"; 
-        });  
+    function saveResponse(options) {
+        layer.msg(options, {icon: 1, time: 2000}, function () {
+            window.location.href = "<?= Url::to(['news/list']) ?>";
+        });
     }
 </script>
 <div id="dcMain">
@@ -170,7 +175,7 @@ $this->registerJsFile('@web/public/backend/js/My97DatePicker/WdatePicker.js', ['
                         <?php elseif ($vo['inputtype'] == 'datetime'): ?>
                             <td colspan="2">
                                 <input type="text" name="<?= $vo['attrname'] ?>" size="<?= $vo['attrsize'] ?>" id="<?= $vo['attrname'] ?>" value="<?= date('Y-m-d H:i:s', $vo['attrvalue']) ?>" maxlength="<?= $vo['attrlenther'] ?>" class="inpMain"/>
-                                <a class="datetime" onclick="WdatePicker({el:'<?= $vo['attrname'] ?>',readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})">选择日期</a>
+                                <a class="datetime" onclick="WdatePicker({el: '<?= $vo['attrname'] ?>', readOnly: true, dateFmt: 'yyyy-MM-dd HH:mm:ss'})">选择日期</a>
                             </td>
                         <?php elseif ($vo['inputtype'] == 'select'): ?>
                             <td colspan="2">
@@ -242,7 +247,7 @@ $this->registerJsFile('@web/public/backend/js/My97DatePicker/WdatePicker.js', ['
                         <td align="right">发布时间</td>
                         <td colspan="2">
                             <input type="text" name="addtime" size="20" maxlength="30" id="addtime" value="<?= date('Y-m-d H:i:s', $read['addtime']) ?>" class="inpMain"/>
-                            <a class="datetime" onclick="WdatePicker({el:'addtime',isShowClear:false,readOnly:true,dateFmt:'yyyy-MM-dd HH:mm:ss'})">选择日期</a>
+                            <a class="datetime" onclick="WdatePicker({el: 'addtime', isShowClear: false, readOnly: true, dateFmt: 'yyyy-MM-dd HH:mm:ss'})">选择日期</a>
                         </td>
                     </tr>
                     <tr>
@@ -286,6 +291,7 @@ $this->registerJsFile('@web/public/backend/js/My97DatePicker/WdatePicker.js', ['
                                     <li>
                                         <img src="<?= $vo['picfile'] ?>" />
                                         <span><a href="javascript:;" onclick="deletepic(this);">删除</a></span>
+                                        <input name="picsort[]" value="<?= $vo['picsort'] ?>" class="inpMain" type="text" style="text-align:center;">
                                         <input type="hidden" name="picfile[]" value="<?= $vo['picfile'] ?>" />
                                     </li>  
                                 <?php endforeach; ?>
@@ -312,20 +318,20 @@ $this->registerJsFile('@web/public/backend/js/My97DatePicker/WdatePicker.js', ['
 </div>
 
 <script>
-    $(function(){  
-        $("input[name='istemplates']").on('change', function() {
-            if($(this).val()==1){
+    $(function () {
+        $("input[name='istemplates']").on('change', function () {
+            if ($(this).val() == 1) {
                 $('#isshow').show(500);
-            }else{
+            } else {
                 $('#isshow').hide(500);
             }
         });
     });
-    function deletepic(obj){
+    function deletepic(obj) {
         if (confirm("确认要删除？")) {
-            var $thisob=$(obj);
-            var $liobj=$thisob.parents('li');
-            var picurl=$liobj.children('input').val();
+            var $thisob = $(obj);
+            var $liobj = $thisob.parents('li');
+            var picurl = $liobj.children('input').val();
             $liobj.remove();
         }
     }

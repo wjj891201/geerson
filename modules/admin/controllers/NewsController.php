@@ -97,6 +97,7 @@ class NewsController extends CommonController
         $template = Yii::$app->request->post("template", 0);
         $typeview = Type::getone(['tid' => $tid]);
         $template = ($istemplates) ? $template : $typeview['readtemplate']; //最终的新闻详细页模板
+        $picsort = Yii::$app->request->post("picsort"); //图集排序
         $picfile = Yii::$app->request->post("picfile"); //图集
         $uptime = time(); //更新时间
         $aid = Yii::$app->session['admin']['id'];
@@ -149,28 +150,28 @@ class NewsController extends CommonController
             {
                 continue;
             }
-            $sysinstall.=$value['attrname'] . ',';
+            $sysinstall .= $value['attrname'] . ',';
             if ($value['accept'] == 'int')
             {
                 $valuestr = Yii::$app->request->post($value['attrname'], 0);
-                $sysinstalldb.="$valuestr,";
+                $sysinstalldb .= "$valuestr,";
             }
             elseif ($value['accept'] == 'html')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = empty($valuestr) ? '' : $this->Text2Html($valuestr);
-                $sysinstalldb.="'$valuestr',";
+                $sysinstalldb .= "'$valuestr',";
             }
             elseif ($value['accept'] == 'editor' || $value['accept'] == 'text')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
-                $sysinstalldb.="'$valuestr',";
+                $sysinstalldb .= "'$valuestr',";
             }
             elseif ($value['accept'] == 'data')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = empty($valuestr) ? 0 : strtotime($valuestr);
-                $sysinstalldb.="$valuestr,";
+                $sysinstalldb .= "$valuestr,";
             }
         }
 
@@ -180,39 +181,39 @@ class NewsController extends CommonController
         $userupdatedb = null;
         foreach ($modelarray as $key => $value)
         {
-            $userinstall.=$value['attrname'] . ',';
+            $userinstall .= $value['attrname'] . ',';
             if ($value['accept'] == 'int')
             {
                 $valuestr = Yii::$app->request->post($value['attrname'], 0);
-                $userinstalldb.="$valuestr,";
-                $userupdatedb.=$value['attrname'] . "=$valuestr,";
+                $userinstalldb .= "$valuestr,";
+                $userupdatedb .= $value['attrname'] . "=$valuestr,";
             }
             elseif ($value['accept'] == 'html')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = empty($valuestr) ? '' : $this->Text2Html($valuestr);
-                $userinstalldb.="'$valuestr',";
-                $userupdatedb.=$value['attrname'] . "='$valuestr',";
+                $userinstalldb .= "'$valuestr',";
+                $userupdatedb .= $value['attrname'] . "='$valuestr',";
             }
             elseif ($value['accept'] == 'editor' || $value['accept'] == 'text')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
-                $userinstalldb.="'$valuestr',";
-                $userupdatedb.=$value['attrname'] . "='$valuestr',";
+                $userinstalldb .= "'$valuestr',";
+                $userupdatedb .= $value['attrname'] . "='$valuestr',";
             }
             elseif ($value['accept'] == 'data')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = empty($valuestr) ? 0 : strtotime($valuestr);
-                $userinstalldb.="$valuestr,";
-                $userupdatedb.=$value['attrname'] . "='$valuestr',";
+                $userinstalldb .= "$valuestr,";
+                $userupdatedb .= $value['attrname'] . "='$valuestr',";
             }
             elseif ($value['accept'] == 'checkbox')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = is_array($valuestr) ? implode(',', $valuestr) : '';
-                $userinstalldb.="'$valuestr',";
-                $userupdatedb.=$value['attrname'] . "='$valuestr',";
+                $userinstalldb .= "'$valuestr',";
+                $userupdatedb .= $value['attrname'] . "='$valuestr',";
             }
         }
         $content = Yii::$app->request->post("content");
@@ -246,7 +247,7 @@ class NewsController extends CommonController
         //添加图集
         if (!empty($picfile))
         {
-            NewsAlbum::install_pic($insert_id, $picfile, false);
+            NewsAlbum::install_pic($insert_id, $picfile, false, $picsort);
         }
         exit('添加成功！');
     }
@@ -337,6 +338,7 @@ class NewsController extends CommonController
         $template = Yii::$app->request->post("template");
         $typeview = Type::getone(['tid' => $tid]);
         $template = ($istemplates) ? $template : $typeview['readtemplate']; //最终的新闻详细页模板
+        $picsort = Yii::$app->request->post("picsort"); //图集排序
         $picfile = Yii::$app->request->post("picfile"); //图集
         $uptime = time(); //更新时间
         $aid = Yii::$app->session['admin']['id'];
@@ -392,24 +394,24 @@ class NewsController extends CommonController
             if ($value['accept'] == 'int')
             {
                 $valuestr = Yii::$app->request->post($value['attrname'], 0);
-                $sysinstalldb.=$value['attrname'] . "=$valuestr,";
+                $sysinstalldb .= $value['attrname'] . "=$valuestr,";
             }
             elseif ($value['accept'] == 'html')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = empty($valuestr) ? '' : $this->Text2Html($valuestr);
-                $sysinstalldb.=$value['attrname'] . "='$valuestr',";
+                $sysinstalldb .= $value['attrname'] . "='$valuestr',";
             }
             elseif ($value['accept'] == 'editor' || $value['accept'] == 'text')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
-                $sysinstalldb.=$value['attrname'] . "='$valuestr',";
+                $sysinstalldb .= $value['attrname'] . "='$valuestr',";
             }
             elseif ($value['accept'] == 'data')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = empty($valuestr) ? 0 : strtotime($valuestr);
-                $sysinstalldb.=$value['attrname'] . "=$valuestr,";
+                $sysinstalldb .= $value['attrname'] . "=$valuestr,";
             }
         }
 
@@ -418,39 +420,39 @@ class NewsController extends CommonController
         $userupdatedb = null;
         foreach ($modelarray as $key => $value)
         {
-            $userinstall.=$value['attrname'] . ',';
+            $userinstall .= $value['attrname'] . ',';
             if ($value['accept'] == 'int')
             {
                 $valuestr = Yii::$app->request->post($value['attrname'], 0);
-                $userinstalldb.="$valuestr,";
-                $userupdatedb.=$value['attrname'] . "=$valuestr,";
+                $userinstalldb .= "$valuestr,";
+                $userupdatedb .= $value['attrname'] . "=$valuestr,";
             }
             elseif ($value['accept'] == 'html')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = empty($valuestr) ? '' : $this->Text2Html($valuestr);
-                $userinstalldb.="'$valuestr',";
-                $userupdatedb.=$value['attrname'] . "='$valuestr',";
+                $userinstalldb .= "'$valuestr',";
+                $userupdatedb .= $value['attrname'] . "='$valuestr',";
             }
             elseif ($value['accept'] == 'editor' || $value['accept'] == 'text')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
-                $userinstalldb.="'$valuestr',";
-                $userupdatedb.=$value['attrname'] . "='$valuestr',";
+                $userinstalldb .= "'$valuestr',";
+                $userupdatedb .= $value['attrname'] . "='$valuestr',";
             }
             elseif ($value['accept'] == 'data')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = empty($valuestr) ? 0 : strtotime($valuestr);
-                $userinstalldb.="$valuestr,";
-                $userupdatedb.=$value['attrname'] . "='$valuestr',";
+                $userinstalldb .= "$valuestr,";
+                $userupdatedb .= $value['attrname'] . "='$valuestr',";
             }
             elseif ($value['accept'] == 'checkbox')
             {
                 $valuestr = Yii::$app->request->post($value['attrname']);
                 $valuestr = is_array($valuestr) ? implode(',', $valuestr) : '';
-                $userinstalldb.="'$valuestr',";
-                $userupdatedb.=$value['attrname'] . "='$valuestr',";
+                $userinstalldb .= "'$valuestr',";
+                $userupdatedb .= $value['attrname'] . "='$valuestr',";
             }
         }
         $content = Yii::$app->request->post("content");
@@ -497,7 +499,7 @@ class NewsController extends CommonController
         //编辑图集
         if (!empty($picfile))
         {
-            NewsAlbum::install_pic($did, $picfile);
+            NewsAlbum::install_pic($did, $picfile, true, $picsort);
         }
         exit('编辑成功！');
     }
